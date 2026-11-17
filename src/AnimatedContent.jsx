@@ -110,8 +110,14 @@ const AnimatedContent = ({
       if (stagger > 0) to.stagger = { each: stagger, from: staggerFrom };
 
       const settle = () => {
-        if (scrub) return;
+        if (scrub || !once) return;
         gsap.set(targets, { clearProps: mask ? 'filter,transform,maskImage,webkitMaskImage' : 'filter,transform' });
+      };
+
+      const reveal = () => tl.play();
+      const conceal = () => {
+        if (mask) gsap.set(targets, { maskImage: mask, webkitMaskImage: mask });
+        tl.reverse();
       };
 
       const disappear = () => {
@@ -143,6 +149,15 @@ const AnimatedContent = ({
 
       if (trigger === 'mount') {
         tl.play();
+        if (!once) {
+          ScrollTrigger.create({
+            trigger: el,
+            scroller,
+            start: 'bottom 30%',
+            onEnter: conceal,
+            onLeaveBack: reveal
+          });
+        }
         return;
       }
 
@@ -164,14 +179,12 @@ const AnimatedContent = ({
         trigger: el,
         scroller,
         start,
+        end: 'bottom 30%',
         once,
-        onEnter: () => tl.play(),
-        onLeaveBack: once
-          ? undefined
-          : () => {
-              if (mask) gsap.set(targets, { maskImage: mask, webkitMaskImage: mask });
-              tl.reverse();
-            }
+        onEnter: reveal,
+        onLeave: once ? undefined : conceal,
+        onEnterBack: once ? undefined : reveal,
+        onLeaveBack: once ? undefined : conceal
       });
     }, el);
 

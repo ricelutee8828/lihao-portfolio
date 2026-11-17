@@ -24,11 +24,13 @@ const strengths = [
   { n:'04', icon:Sparkles, title:'多类型交付', body:'覆盖校企宣传、专题片、活动纪录片、微课及新媒体短视频。', tags:'品牌宣传 · 演出 · 新媒体' },
 ];
 const revealProps = {
-  distance: 110,
+  distance: 32,
   direction: 'vertical',
-  duration: 0.7,
-  ease: 'power3.out',
-  blur: 4,
+  duration: 0.42,
+  ease: 'power2.out',
+  blur: 2,
+  wipe: 'up',
+  once: false,
   stagger: 0.08,
   threshold: 0.1
 };
@@ -89,5 +91,5 @@ function App(){
     <section className="work section" id="work"><div className="shell"><Reveal className="section-head"><div><SectionLabel index="02">SELECTED WORK / 精选项目</SectionLabel><h2>画面，是作品的<br/><em>第一句话。</em></h2></div><p>从演出现场到城市活动，从人物到品牌。<br/>以下项目选自个人简历。</p></Reveal><Reveal className="project-list" blur={0}>{projects.map((p)=><article className={'project-card '+p.cls} key={p.no}><div className="project-image" style={{backgroundImage:`url(${p.image})`}}/><div className="project-overlay"/><div className="project-top"><span>PROJECT {p.no}</span><span>{p.year} <ArrowUpRight size={18}/></span></div><div className="project-bottom"><div><small>{p.type}</small><h3>{p.title}<br/><span>{p.sub}</span></h3></div><span className="placeholder-note">项目实拍画面</span></div></article>)}</Reveal><Reveal className="other-projects-action"><button className="contact-cta" type="button" onClick={() => setGalleryOpen(true)} aria-haspopup="dialog">我的其他项目 <ArrowUpRight size={32}/></button></Reveal><Reveal className="work-footnote">另参与黄凯芹 40 周年音乐演艺历程视频、巫启贤巡演发布会花絮、“羊城工匠”教师职业技能竞赛纪实片等项目。</Reveal></div></section>
     <section className="expertise section shell" id="expertise"><Reveal className="section-head"><div><SectionLabel index="03">CAPABILITIES / 个人优势</SectionLabel><h2>从现场到时间线，<br/><em>保持同一种判断力。</em></h2></div><p>以拍摄理解素材，以剪辑完成表达。<br/>让每个制作环节服务于最终叙事。</p></Reveal><Reveal className="strength-grid">{strengths.map(s=><SpotlightCard key={s.n} className="strength-card" theme="dark" spotlightColor="#ffffff" intensity={0.3} spotlightSize={250} softness={0.7} shape="circle" borderGlow={0.85} proximity={80} smoothing={0.3} grain={0.7} ambient={false} flare><div className="strength-top"><s.icon size={27} strokeWidth={1.25}/><span>{s.n}</span></div><div><h3>{s.title}</h3><p>{s.body}</p></div><small>{s.tags}</small></SpotlightCard>)}</Reveal></section>
     <section className="contact" id="contact"><div className="contact-glow"/><Reveal className="shell contact-content"><SectionLabel index="04">CONTACT / 联系方式</SectionLabel><div className="contact-main"><ContactHeading/></div><div className="contact-bottom"><div><span>EMAIL</span><a href="mailto:LINH_22@163.com">LINH_22@163.com</a></div><div><span>PHONE</span><a href="tel:13288474391">132 8847 4391</a></div><div><span>BASED IN</span><strong>中国 · 广州</strong></div><a className="backtop" href="#top">BACK TO TOP ↑</a></div><footer>© 2026 LI HAO. ALL RIGHTS RESERVED. <span>EDITED WITH INTENTION.</span></footer></Reveal></section>
-  </main><GradualBlur target="page" position="bottom" height="4rem" strength={2} layers={8} curve="linear" exponential tint="rgba(18, 15, 23, 0.6)" autoHide zIndex={20}/>{galleryOpen && <React.Suspense fallback={null}><VideoGallery onClose={() => setGalleryOpen(false)}/></React.Suspense>}</> }
+  </main><GradualBlur target="page" position="bottom" height="4rem" strength={0.5} layers={7} curve="linear" exponential tint="rgba(18, 15, 23, 0.1)" autoHide opacity={0.4} saturation={0.2} hoverIntensity={0.8} zIndex={20}/>{galleryOpen && <React.Suspense fallback={null}><VideoGallery onClose={() => setGalleryOpen(false)}/></React.Suspense>}</> }
 createRoot(document.getElementById('root')).render(<App/>);
