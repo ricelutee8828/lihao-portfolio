@@ -134,3 +134,10 @@ a.gallery-item:hover{transform:translateY(-4px);border-color:#c8a675;background:
   .hero .button-primary{min-width:145px}
   .contact-bottom a:not(.backtop),.contact-bottom strong{font-size:18px}
 }
+
+.about h2.about-tech-heading{line-height:1;margin:19px 0 30px}
+.about h2.about-tech-heading .about-tech-line{display:block;height:1.35em;color:#f1f0e9}
+.about h2.about-tech-heading .about-tech-line.is-accent{color:#c4a579}
+.contact h2.contact-split-heading{line-height:1.22}
+.contact-split-line{display:block;color:#f1f0e9}
+.contact-split-line.is-accent{color:#c9aa7b}
