@@ -225,15 +225,15 @@ const TechText = ({
       let m = probe.measureText(s.text);
       const fit = Math.min(
         1,
-        (width * 0.9) / Math.max(m.actualBoundingBoxLeft + m.actualBoundingBoxRight, 1),
-        (height * 0.66) / Math.max(m.actualBoundingBoxAscent + m.actualBoundingBoxDescent, 1)
+        (width * 0.96) / Math.max(m.actualBoundingBoxLeft + m.actualBoundingBoxRight, 1),
+        (height * 0.83) / Math.max(m.actualBoundingBoxAscent + m.actualBoundingBoxDescent, 1)
       );
       const size = s.fontSize * fit;
       setFont(probe, s, size);
       m = probe.measureText(s.text);
       const inkWidth = m.actualBoundingBoxLeft + m.actualBoundingBoxRight;
       const inkHeight = m.actualBoundingBoxAscent + m.actualBoundingBoxDescent;
-      const margin = width * 0.05;
+      const margin = width * 0.02;
       const start =
         s.align === 'left' ? margin : s.align === 'right' ? width - margin - inkWidth : (width - inkWidth) / 2;
       const x = start + m.actualBoundingBoxLeft;

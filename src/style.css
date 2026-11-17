@@ -135,9 +135,10 @@ a.gallery-item:hover{transform:translateY(-4px);border-color:#c8a675;background:
   .contact-bottom a:not(.backtop),.contact-bottom strong{font-size:18px}
 }
 
-.about h2.about-tech-heading{line-height:1;margin:19px 0 30px}
-.about h2.about-tech-heading .about-tech-line{display:block;height:1.35em;color:#f1f0e9}
+.about h2.about-tech-heading{font-size:clamp(54px,5vw,70px);line-height:1;margin:17px 0 24px}
+.about h2.about-tech-heading .about-tech-line{display:block;height:1.18em;color:#f1f0e9}
 .about h2.about-tech-heading .about-tech-line.is-accent{color:#c4a579}
 .contact h2.contact-split-heading{line-height:1.22}
 .contact-split-line{display:block;color:#f1f0e9}
 .contact-split-line.is-accent{color:#c9aa7b}
+@media(max-width:700px){.about h2.about-tech-heading{font-size:clamp(38px,9.5vw,46px);margin:14px 0 22px}}

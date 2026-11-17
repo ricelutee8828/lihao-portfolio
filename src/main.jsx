@@ -34,14 +34,14 @@ const revealProps = {
 function Reveal({children, ...props}) { return <AnimatedContent {...revealProps} {...props}>{children}</AnimatedContent> }
 function SectionLabel({index,children}) { return <div className="section-label"><span>{index} /</span> {children}</div> }
 function AboutHeading() {
-  const [narrow, setNarrow] = React.useState(() => window.matchMedia('(max-width: 700px)').matches);
+  const [narrow, setNarrow] = React.useState(() => window.matchMedia('(max-width: 1250px)').matches);
   React.useEffect(() => {
-    const query = window.matchMedia('(max-width: 700px)');
+    const query = window.matchMedia('(max-width: 1250px)');
     const update = () => setNarrow(query.matches);
     query.addEventListener('change', update);
     return () => query.removeEventListener('change', update);
   }, []);
-  const lines = narrow ? ['镜头之外，', '我在意故事如何', '被看见。'] : ['镜头之外，', '我在意故事如何被看见。'];
+  const lines = narrow ? ['镜头之外，', '我在意故事', '如何被看见。'] : ['镜头之外，', '我在意故事如何被看见。'];
   return <h2 className="about-tech-heading" aria-label="镜头之外，我在意故事如何被看见。">
     {lines.map((line, index) => <span className={`about-tech-line${index ? ' is-accent' : ''}`} aria-hidden="true" key={line}>
       <TechText text={line} fontWeight={500} fontSize={72} letterSpacing={-0.065} align="left" reveal="letter" accentColor="#c9aa7b" specks={7} labels={false} guides={false} speed={0.7} intro="none" />
