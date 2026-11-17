@@ -7,7 +7,7 @@ export const videoWorks = [
   { id: 'chris-foshan', title: '黄凯芹巡演回顾纪录片', subtitle: '演出纪录片', category: '演出影像', year: '2025', cover: '/project-chris-foshan.webp', shareUrl: '' },
   { id: 'skills-guangzhou', title: '世界技能大赛广州邀请赛', subtitle: '赛事活动纪实', category: '活动纪实', year: '2024', cover: '/project-skills-competition.webp', shareUrl: '' },
   { id: 'college-automotive', title: '广州市技师学院交通装备系', subtitle: '校企宣传片', category: '校企宣传', year: '2023', cover: '/project-college-automotive.webp', shareUrl: '' },
-  { id: 'chris-40', title: '黄凯芹 40 周年音乐演艺历程', subtitle: '个人介绍混剪', category: '演出影像', year: '2026', cover: '/chris-40-career.webp', shareUrl: '' },
-  { id: 'china-development', title: '中国发展大事件混剪', subtitle: '混剪', category: '活动纪实', year: '', cover: '/china-development-montage.webp', shareUrl: '' },
+  { id: 'chris-40', title: '黄凯芹 40 周年音乐演艺历程', subtitle: '混剪', category: '演出影像', year: '2026', cover: '/chris-40-career.webp', shareUrl: '' },
+  { id: 'china-development', title: '中国发展大事件混剪', subtitle: '混剪', category: '影视混剪', year: '2026', cover: '/china-development-montage.webp', shareUrl: '' },
   { id: 'yangcheng-craftsman', title: '“羊城工匠”教师职业技能竞赛', subtitle: '赛事活动纪实', category: '活动纪实', year: '2023', cover: '/yangcheng-craftsman.webp', shareUrl: '' },
 ];
