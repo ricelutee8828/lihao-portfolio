@@ -49,6 +49,11 @@
 @media(max-width:700px){.about .about-profile{height:480px}}
 .about-contact{font-size:15px;font-weight:500;color:#e1e0d9;gap:15px 26px}
 .about-contact svg{width:18px;height:18px}
+
+/* Blend the backgrounds where adjacent sections meet. */
+#work{background:linear-gradient(to bottom,#090b0c 0%,#101313 180px,#101313 calc(100% - 180px),#090b0c 100%)}
+#expertise{position:relative}
+#expertise::after{content:'';position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:100vw;height:150px;background:linear-gradient(to bottom,transparent,#151a18);pointer-events:none}
 .other-projects-action{margin-top:34px}
 .other-projects-action .contact-cta{font-size:20px;gap:42px}
 #other-projects{scroll-margin-top:120px}
