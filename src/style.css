@@ -54,8 +54,11 @@
 #work{background:linear-gradient(to bottom,#090b0c 0%,#101313 180px,#101313 calc(100% - 180px),#090b0c 100%)}
 #expertise{position:relative}
 #expertise::after{content:'';position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:100vw;height:150px;background:linear-gradient(to bottom,transparent,#151a18);pointer-events:none}
-.other-projects-action{margin-top:34px}
-.other-projects-action .contact-cta{font-size:20px;gap:42px}
+.other-projects-action{margin-top:26px}
+.other-projects-button{appearance:none;width:100%;min-height:154px;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:30px clamp(24px,3vw,48px);text-align:left;font:inherit;color:#f1f0e9;cursor:pointer;border:1px solid #b9986870;background:linear-gradient(105deg,#433526 0%,#282823 44%,#19201d 100%);box-shadow:inset 3px 0 #c9a777;transition:border-color .25s,background .25s,transform .25s}
+.other-projects-button:hover{border-color:#d7b480;background:linear-gradient(105deg,#51402d 0%,#30302a 48%,#202824 100%);transform:translateY(-2px)}
+.other-projects-copy{display:flex;flex-direction:column;gap:10px}.other-projects-kicker{font-size:11px;font-weight:700;letter-spacing:.16em;color:#d4b485}.other-projects-copy strong{font-size:clamp(25px,2.5vw,38px);line-height:1.2;font-weight:500;letter-spacing:-.035em}.other-projects-hint{font-size:13px;color:#c9c8be}.other-projects-arrow{flex:none;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:#d0ae7b;color:#151715;transition:transform .25s,background .25s}.other-projects-button:hover .other-projects-arrow{transform:translate(3px,-3px);background:#e4c393}
+@media(max-width:700px){.other-projects-button{min-height:150px;padding:24px;gap:18px}.other-projects-copy{gap:9px}.other-projects-kicker{font-size:9px}.other-projects-copy strong{font-size:25px}.other-projects-hint{font-size:11px;line-height:1.5}.other-projects-arrow{width:46px;height:46px}.other-projects-arrow svg{width:22px;height:22px}}
 #other-projects{scroll-margin-top:120px}
 .contact{min-height:0}
 .contact-content{min-height:0;padding-top:86px}
@@ -74,8 +77,7 @@
 @media(max-width:700px){.contact-bottom>div{min-width:100%}.contact-bottom a:not(.backtop),.contact-bottom strong{font-size:20px}}
 
 /* 作品目录：视频本体由飞书云盘提供，站内仅展示封面与信息。 */
-.other-projects-action button.contact-cta{appearance:none;background:none;border:0;border-bottom:1px solid #c2a273;border-radius:0;color:inherit;font-family:inherit;cursor:pointer;padding:0 0 14px}
-.other-projects-action button.contact-cta:focus-visible,.gallery-dialog button:focus-visible,.gallery-item:focus-visible{outline:2px solid #e4b879;outline-offset:4px}
+.other-projects-button:focus-visible,.gallery-dialog button:focus-visible,.gallery-item:focus-visible{outline:2px solid #e4b879;outline-offset:4px}
 .gallery-backdrop{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:24px;background:#030505d9;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
 .gallery-dialog{width:min(1500px,100%);max-height:min(960px,calc(100vh - 48px));overflow:auto;overscroll-behavior:contain;background:#111514;border:1px solid #796b554d;box-shadow:0 30px 100px #000c;padding:clamp(24px,3.6vw,58px)}
 .gallery-header{display:flex;align-items:flex-start;justify-content:space-between;gap:32px}
