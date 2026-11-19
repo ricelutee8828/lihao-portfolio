@@ -61,30 +61,20 @@ function ContactHeading() {
   </h2>;
 }
 const gridMotionItems = [
-  '/grid-motion/01-national-anniversary.webp',
-  '/grid-motion/02-music-journey.webp',
-  '/grid-motion/03-skills-craft.webp',
-  '/grid-motion/04-foshan-stage.webp',
-  '/grid-motion/05-singer-interview.webp',
   '/grid-motion/06-automotive-class.webp',
-  '/grid-motion/07-lion-dance.webp',
-  '/grid-motion/08-stage-dance.webp',
-  '/grid-motion/09-skills-contest.webp',
-  '/grid-motion/10-classroom-talk.webp',
-  '/grid-motion/11-red-stage.webp',
-  '/grid-motion/12-skills-guidance.webp',
   '/grid-motion/13-blue-stage.webp',
-  '/grid-motion/14-maker-interview.webp',
-  '/grid-motion/15-workshop-presenters.webp',
-  '/grid-motion/16-skills-judges.webp',
-  '/grid-motion/17-network-training.webp',
-  '/grid-motion/18-blue-stage-singer.webp',
-  '/grid-motion/19-worldskills-medals.webp',
-  '/grid-motion/20-foshan-concert.webp',
-  '/grid-motion/21-skills-panel.webp',
-  '/grid-motion/22-cultural-exchange.webp',
-  '/grid-motion/23-rooftop-guitar.webp',
-  '/grid-motion/24-blue-guitar.webp'
+  '/china-development-montage.webp',
+  '/grid-motion/10-classroom-talk.webp',
+  '/grid-motion/08-stage-dance.webp',
+  '/chris-40-career.webp',
+  '/grid-motion/05-singer-interview.webp',
+  '/grid-motion/12-skills-guidance.webp',
+  '/grid-motion/11-red-stage.webp',
+  '/grid-motion/04-foshan-stage.webp',
+  '/yangcheng-craftsman.webp',
+  '/project-skills-competition.webp',
+  '/grid-motion/03-skills-craft.webp',
+  '/project-college-automotive.webp'
 ];
 function App(){
   const [pastHero, setPastHero] = React.useState(false);
@@ -179,7 +169,7 @@ function App(){
     <section className="hero" id="top"><div className="hero-film"><video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="/hero-chris-poster.jpg" aria-hidden="true"><source src="/hero-chris-highlights-v2.mp4" type="video/mp4"/></video></div><div className="hero-shade"/><Reveal className="hero-content shell" trigger="mount"><div className="hero-intro"><p>影视剪辑师 / 视频摄像<br/>FILM EDITOR & CINEMATOGRAPHER</p></div><div className="eyebrow"><span className="live-dot"/> LI HAO &nbsp; / &nbsp; SELECTED PORTFOLIO</div><h1><span>让每一帧</span><br/><em>都有叙事的力量<span>.</span></em></h1><p className="hero-desc">在拍摄与剪辑之间，寻找画面最准确的表达。<br/>常驻广州 · 开放影像项目合作</p><div className="hero-actions"><a className="button-primary" href="#work">探索作品 <ArrowUpRight size={18}/></a><a className="button-ghost" href="#contact">联系合作 <ArrowUpRight size={13}/></a></div></Reveal><Reveal className="hero-bottom shell" trigger="mount"><span>SCROLL TO EXPLORE <ArrowDownRight size={15}/></span><span>LI HAO &nbsp; / &nbsp; PORTFOLIO 2026</span></Reveal><div className="hero-side">FRAME BY FRAME &nbsp;·&nbsp; STORY BY STORY</div><div className="hero-rail">01&nbsp; / &nbsp; VISUAL STORIES</div></section>
     <section className="about section shell" id="about"><Reveal className="about-label" initialOpacity={0.65}><SectionLabel index="01">ABOUT / 关于我</SectionLabel></Reveal><Reveal className="about-layout"><ProfileCard className="about-profile" name="李灏" title="影视剪辑师 / 视频摄像" handle="lihao" status="开放合作" contactText="联系合作" avatarUrl="/resume-image.webp" iconUrl="/profile-pattern.svg" holo={0.95} glare={0.4} tiltStrength={11} parallax={10} radius={16} enableTilt={true} intro={true} showUserInfo={false} enableMobileTilt theme="dark" onContactClick={() => { window.location.href = "mailto:LINH_22@163.com"; }}/><div className="about-copy"><p className="kicker">THE PERSON BEHIND THE FRAME</p><AboutHeading/><p className="about-lead">你好，我是李灏，一名常驻广州的影视剪辑师 / 视频摄像。</p><p className="muted">约 5 年拍摄与后期制作相关经历，参与校企宣传片、专题片、活动纪实、微课、新媒体短视频及演出活动项目。从前期镜头采集，到后期剪辑、包装与成片交付，我熟悉完整的影像制作流程。</p><div className="stats"><div><strong>约 5<sup>年</sup></strong><span>拍摄与后期经历</span></div><div><strong>09<span>+</span></strong><span>简历收录项目</span></div><div><strong>05<span>类</span></strong><span>影像内容方向</span></div></div><div className="about-contact"><a href="mailto:LINH_22@163.com"><Mail size={16}/> LINH_22@163.com</a><a href="tel:13288474391"><Phone size={16}/> 132 8847 4391</a><span><MapPin size={16}/> 广州 · 白云</span></div></div></Reveal><Reveal className="experience"><span>RECENT EXPERIENCE</span><div><strong>广州蓝大传媒有限公司</strong><span>摄像剪辑</span><time>2024.09 — 2026.09</time></div><div><strong>广州捷影文化传媒有限公司</strong><span>拍摄 / 后期制作</span><time>2021.06 — 2024.05</time></div></Reveal></section>
     <section className="work section" id="work"><div className="shell"><Reveal className="section-head"><div><SectionLabel index="02">SELECTED WORK / 精选项目</SectionLabel><h2>画面，是作品的<br/><em>第一句话。</em></h2></div><p>从演出现场到城市活动，从人物到品牌。<br/>以下项目选自个人简历。</p></Reveal><div className="work-interaction-scope" ref={workInteractionRef}><Reveal className="project-list" blur={0}>{projects.map((p, i)=><article ref={i === 1 ? crosshairStartRef : null} className={'project-card '+p.cls} key={p.no}><div className="project-image" style={{backgroundImage:`url(${p.image})`}}/><div className="project-overlay"/><div className="project-top"><span>PROJECT {p.no}</span><span>{p.year} <ArrowUpRight size={18}/></span></div><div className="project-bottom"><div><small>{p.type}</small><h3>{p.title}<br/><span>{p.sub}</span></h3></div><span className="placeholder-note">项目实拍画面</span></div></article>)}</Reveal><Reveal className="other-projects-action"><button ref={otherProjectsRef} className="other-projects-button" type="button" onClick={() => setGalleryOpen(true)} aria-haspopup="dialog" aria-label="查看我的其他作品"><span className="other-projects-copy"><span className="other-projects-kicker">MORE WORK / 我的其他项目</span><strong>查看我的其他作品</strong><span className="other-projects-hint">演出影像 · 活动纪实 · 校企宣传 · 影视混剪</span></span><span className="other-projects-arrow" aria-hidden="true"><ArrowUpRight size={28}/></span></button></Reveal>{crosshairPreview && !galleryOpen && crosshairBounds && <Crosshair containerRef={workInteractionRef} proximityTargetRef={otherProjectsRef} listenGlobally targetSelector=".other-projects-button" color="#ffffff" targetEffect="lock" thickness={1} opacity={0.85} smoothing={0.35} showCoordinates={false} fade={0.95} style={{inset:"auto",left:-crosshairBounds.side,top:crosshairBounds.top,width:`calc(100% + ${crosshairBounds.side * 2}px)`,height:crosshairBounds.height}}/>}</div></div></section>
-    <section className={`expertise section${gridMotionPreview ? ' expertise-grid-preview' : ''}`} id="expertise">{gridMotionPreview && <div className="expertise-motion" aria-hidden="true"><GridMotion items={gridMotionItems} rows={4} aspectRatio={1.33} gap={16} radius={14} angle={-12} tilt={0} speed={24} direction="alternate" parallax={0.5} spotlight={0.6} dim={0.35} fade={0.5} grayscale={false} noRepeat/></div>}<div className="shell expertise-content"><Reveal className="section-head"><div><SectionLabel index="03">CAPABILITIES / 个人优势</SectionLabel><h2>从现场到时间线，<br/><em>保持同一种判断力。</em></h2></div><p>以拍摄理解素材，以剪辑完成表达。<br/>让每个制作环节服务于最终叙事。</p></Reveal><Reveal className="strength-grid">{strengths.map(s=><SpotlightCard key={s.n} className="strength-card" theme="dark" spotlightColor="#ffffff" intensity={0.3} spotlightSize={250} softness={0.7} shape="circle" borderGlow={0.85} proximity={80} smoothing={0.3} grain={0.7} ambient={false} flare><div className="strength-top"><s.icon size={27} strokeWidth={1.25}/><span>{s.n}</span></div><div><h3>{s.title}</h3><p>{s.body}</p></div><small>{s.tags}</small></SpotlightCard>)}</Reveal></div></section>
+    <section className={`expertise section${gridMotionPreview ? ' expertise-grid-preview' : ''}`} id="expertise">{gridMotionPreview && <div className="expertise-motion" aria-hidden="true"><GridMotion items={gridMotionItems} rows={4} aspectRatio={2.4} gap={16} radius={14} angle={-12} tilt={0} speed={24} direction="alternate" parallax={0.5} spotlight={0.6} dim={0.35} fade={0.5} grayscale={false} noRepeat/></div>}<div className="shell expertise-content"><Reveal className="section-head"><div><SectionLabel index="03">CAPABILITIES / 个人优势</SectionLabel><h2>从现场到时间线，<br/><em>保持同一种判断力。</em></h2></div><p>以拍摄理解素材，以剪辑完成表达。<br/>让每个制作环节服务于最终叙事。</p></Reveal><Reveal className="strength-grid">{strengths.map(s=><SpotlightCard key={s.n} className="strength-card" theme="dark" spotlightColor="#ffffff" intensity={0.3} spotlightSize={250} softness={0.7} shape="circle" borderGlow={0.85} proximity={80} smoothing={0.3} grain={0.7} ambient={false} flare><div className="strength-top"><s.icon size={27} strokeWidth={1.25}/><span>{s.n}</span></div><div><h3>{s.title}</h3><p>{s.body}</p></div><small>{s.tags}</small></SpotlightCard>)}</Reveal></div></section>
     <section className="contact" id="contact"><div className="contact-glow"/><Reveal className="shell contact-content"><SectionLabel index="04">CONTACT / 联系方式</SectionLabel><div className="contact-main"><ContactHeading/></div><div className="contact-bottom"><div><span>EMAIL</span><a href="mailto:LINH_22@163.com">LINH_22@163.com</a></div><div><span>PHONE</span><a href="tel:13288474391">132 8847 4391</a></div><div><span>BASED IN</span><strong>中国 · 广州</strong></div><a className="backtop" href="#top">BACK TO TOP ↑</a></div><footer>© 2026 LI HAO. ALL RIGHTS RESERVED. <span>EDITED WITH INTENTION.</span></footer></Reveal></section>
   </main><GradualBlur target="page" position="bottom" height="4rem" strength={0.5} layers={7} curve="linear" exponential tint="rgba(18, 15, 23, 0.1)" autoHide opacity={0.4} saturation={0.2} hoverIntensity={0.8} zIndex={20}/>{galleryOpen && <React.Suspense fallback={null}><VideoGallery onClose={() => setGalleryOpen(false)}/></React.Suspense>}</> }
 createRoot(document.getElementById('root')).render(<App/>);
