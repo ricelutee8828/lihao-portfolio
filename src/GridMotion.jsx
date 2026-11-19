@@ -233,8 +233,11 @@ const GridMotion = ({
         if (!reduce) motion.offsets[r] += s.speed * drift * PACE[r % PACE.length] * dt;
         const target = reduce ? 0 : s.parallax * layout.tileWidth * 1.2 * nudge * (r % 2 ? -1 : 1);
         motion.shifts[r] += (target - motion.shifts[r]) * (1 - Math.exp(-dt / INERTIA[r % INERTIA.length]));
+        const travel = Math.min(layout.tileWidth * 0.5, 180);
+        const phase = wrap(motion.offsets[r], travel * 2);
+        const bounce = phase <= travel ? phase : travel * 2 - phase;
         const x = noRepeat
-          ? (layout.planeWidth - layout.period) / 2 + (reduce ? 0 : Math.sin(motion.offsets[r] / Math.max(layout.tileWidth, 1)) * Math.min(48, layout.gap * 2)) + motion.shifts[r] * 0.12
+          ? (layout.planeWidth - layout.period) / 2 + (reduce ? 0 : bounce - travel / 2) + motion.shifts[r] * 0.12
           : -layout.period + wrap(motion.offsets[r] + motion.shifts[r], layout.period);
         row.style.transform = `translate3d(${x.toFixed(2)}px, 0, 0)`;
 

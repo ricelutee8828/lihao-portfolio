@@ -93,8 +93,7 @@ function App(){
   const workInteractionRef = React.useRef(null);
   const crosshairStartRef = React.useRef(null);
   const [crosshairBounds, setCrosshairBounds] = React.useState(null);
-  const previewParams = new URLSearchParams(window.location.search);
-  const crosshairPreview = ['localhost', '127.0.0.1'].includes(window.location.hostname) && (previewParams.has('crosshair-preview') || previewParams.has('target-cursor-preview'));
+  const crosshairPreview = true;
   const gridMotionPreview = true;
   React.useLayoutEffect(() => {
     if (!crosshairPreview) return undefined;
